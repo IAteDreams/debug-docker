@@ -1,7 +1,7 @@
 name: Github Actions Debug
 
 on:
-  pull_request:
+  pull_request: #replace pull-request 
   push:
     branches: 
       - develop
@@ -10,7 +10,7 @@ jobs:
   build:
     name: Running Units Tests
     runs-on: ubuntu-latest
-    # fix indentation, remove dash in run and uses, replace survey-form in line 24 to survey-form-v2
+    # fix indentation, remove dash in run and uses
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,6 +21,6 @@ jobs:
       - name: List all container   #remove this step once you're done investigating
         run: docker ps
       - name: Run tests from the built image
-        run: docker run survey-form-v2 sh -c "npm test"
+        run: docker run survey-form-v2 sh -c "npm test" #replace survey-form to survey-form-v2
       - name: Compose down the docker
         run: docker-compose -f "docker-compose.yml" down
