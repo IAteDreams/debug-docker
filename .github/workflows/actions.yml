@@ -10,6 +10,7 @@ jobs:
   build:
     name: Running Units Tests
     runs-on: ubuntu-latest
+    # fix indentation, remove dash in run and uses, replace survey-form in line 24 to survey-form-v2
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
